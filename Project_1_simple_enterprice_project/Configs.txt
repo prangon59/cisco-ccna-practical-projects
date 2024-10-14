@@ -1,0 +1,25 @@
+1st subnet
+subnet mask - 255.255.255.128
+network id - 192.168.40.0
+valid host range - 192.168.40.1 - 126
+broadcast id - 192.168.40.127
+
+2nd subnet
+subnet mask - 255.255.255.128
+network id - 192.168.40.128
+valid host range - 192.168.40.129 - 254
+broadcast id - 192.168.40.255
+
+
+
+Router config
+en
+config t
+int range gig0/0-1
+no sh
+exit
+int gig0/0
+ip add 192.168.40.1 255.255.255.128
+
+int gig0/1
+ip add 192.168.40.129 255.255.255.128
